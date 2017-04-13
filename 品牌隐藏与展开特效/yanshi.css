@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0px; padding:0px;}
+.pinpailiebiao
+  {
+	 width:800px;
+	 height: 200px;
+	 border:solid #000; 
+	  }
+.pinpailiebiao ul li
+  {
+	  width:250px;
+	  height:25px;
+	  float:left;
+	   }
+.showmore
+  {
+	width:100px;
+	height:20px;
+	float:left;
+	border:solid #000;
+	position:absolute;
+	margin-top:160px;
+	text-align:center;
+	margin-left:350px;
+	  }

@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>DOM</title>
+<link href="shizhan.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="big">
+  <div class="con">
+    <div class="pic">
+     <img src="img/1.jpg" bgc="#D8CBFF"  style="display:block"/>
+     <img src="img/2.jpg" bgc="#4E4D9B" />
+     <img src="img/3.jpg" bgc="#62A5D0" />
+     <img src="img/4.jpg" bgc="#F98383" />
+     <img src="img/5.jpg" bgc="#2851E9" />
+     <img src="img/6.jpg" bgc="#411B58" />
+     <img src="img/7.jpg" bgc="#7398E6" />
+    </div>
+    
+    
+    <ul class="list">
+     <li class="active"></li>
+     <li></li><li></li><li></li><li></li><li></li><li></li>
+    </ul>
+    
+    
+    <ul class="but" onselectstart="return false">
+     <li class="left">&lt;</li>
+     <li class="right">&gt;</li>
+    </ul>
+  </div>
+</div>
+<script src="jquery-1.12.3.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+ var a = 0;
+ var Time;
+ $(".list li").hover(function(){
+	  a = $(this).index();
+	  $(this).addClass("active").siblings().removeClass("active");
+	  $(".pic img").eq(a).stop(true).fadeIn("slow").siblings().hide();
+	  var bgColor = $(".pic img").eq(a).attr("bgc");
+	  $(".big").css("background",bgColor);
+ });
+ $(".right").click(function(){
+     (a<6)?(a++):(a=0);
+	 $(".list li").eq(a).addClass("active").siblings().removeClass("active");
+	 $(".pic img").eq(a).stop(true).fadeIn("slow").siblings().hide();
+	  var bgColor = $(".pic img").eq(a).attr("bgc");
+	  $(".big").css("background",bgColor);
+	 });
+ $(".left").click(function(){
+	 (a>0)?(a--):(a=6);
+	 $(".list li").eq(a).addClass("active").siblings().removeClass("active");
+	 $(".pic img").eq(a).stop(true).fadeIn("slow").siblings().hide();
+	 var bgColor = $(".pic img").eq(a).attr("bgc");
+	 $(".big").css("background",bgColor);
+	 });
+
+     function play(){
+		 Time = setInterval(function(){
+			 (a<6)?(a++):(a=0);
+			$(".list li").eq(a).addClass("active").siblings().removeClass("active");
+	        $(".pic img").eq(a).stop(true).fadeIn("slow").siblings().hide();
+	        var bgColor = $(".pic img").eq(a).attr("bgc");
+	        $(".big").css("background",bgColor);
+			 },2000);
+		 };
+		 play();
+		 
+		 $(".con").hover(function(){
+			 clearInterval(Time);
+			 },function(){
+				 play();
+				 });
+</script>
+</body>
+</html>

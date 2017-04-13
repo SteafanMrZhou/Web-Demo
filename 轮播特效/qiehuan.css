@@ -1,0 +1,44 @@
+@charset "utf-8";
+/* CSS Document */
+*{ margin:0px; padding:0px;}
+ul{list-style:none}
+.box
+{
+ width:1000px;
+ height:500px;
+ background:#F0F;
+ margin:20px auto 0;
+ overflow:hidden;
+ position:relative;	
+}
+/*图片开始*/
+.images
+{
+ position:absolute;
+ top:0;
+ left:0;
+ width:10000px;	
+}
+.images ul li
+{
+ float:left;	
+}
+/*图片结束*/
+.bottom a
+{
+ z-index:999;
+ width:25px;
+ height:50px;
+ top:50%;
+ position:absolute;
+ display:block;
+ margin-top:-30px;	
+}
+.left
+{
+ left:10px;	
+}
+.right
+{
+ right:40px;
+}

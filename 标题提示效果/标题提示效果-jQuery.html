@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>DOM</title>
+<link href="biaotitishi.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="panel">
+ <h5 class="head">什么是jQuery?</h5>
+ <div class="content">
+ jQuery是一个兼容多浏览器的javascript库，核心理念是write less,do more(写得更少,做得更多)。jQuery在2006年1月由美国人John Resig在纽约的barcamp发布，吸引了来自世界各地的众多JavaScript高手加入，由Dave Methvin率领团队进行开发。如今，jQuery已经成为最流行的javascript库，在世界前10000个访问最多的网站中，有超过55%在使用jQuery。
+ </div>
+</div>
+</body>
+<script src="jquery-1.12.3.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function(){
+	$("#panel h5.head").bind("click",function(){
+		 var $content=$(this).next("div.content");
+		 if($content.is(":visible"))
+		 {
+			 $content.slideUp();
+			 }else{
+				 $content.slideDown();
+				 }
+		})
+	})
+</script>
+</html>

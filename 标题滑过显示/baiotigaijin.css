@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* CSS Document */
+*{ margin:0px; padding:0px;}
+#panel
+{ 
+ width:400px;
+ height:400px;
+ border:dashed #FF0000;
+ margin:200px auto;
+ text-align:center;
+ cursor:pointer;
+}
+.content
+{
+ display: none;
+}
